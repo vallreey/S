@@ -133,7 +133,7 @@ class LoginPage extends StatelessWidget {
                     child: Text(
                       'Password...',
                       style: TextStyle(
-                        color: Color(0xFFCACACA),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
