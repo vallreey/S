@@ -6,20 +6,16 @@ import 'package:SiBangKu/RegisterPage.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
-      ),
-      home: Scaffold(
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: StartupPage(),
-        ),
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: StartupPage(),
       ),
     );
   }
 }
+
 
 class StartupPage extends StatelessWidget {
   @override
