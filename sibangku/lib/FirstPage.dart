@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:SiBangKu/LoginPage.dart';
-import 'package:SiBangKu/RegisterPage.dart';
+import 'package:SiKarung/LoginPage.dart';
+import 'package:SiKarung/RegisterPage.dart';
 
-
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +14,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 
 class StartupPage extends StatelessWidget {
   @override
@@ -40,47 +38,49 @@ class StartupPage extends StatelessWidget {
                     child: Stack(
                       children: [
                         Positioned(
-                        left: 0,
-                        top: 0,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RegisterPage()),
-                            );
-                          },
-                          child: Container(
-                            width: 280,
-                            height: 67,
-                            decoration: ShapeDecoration(
-                              color: Color(0xFF468F2B),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
+                          left: 0,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterPage()),
+                              );
+                            },
+                            child: Container(
+                              width: 280,
+                              height: 67,
+                              decoration: ShapeDecoration(
+                                color: Color(0xFF468F2B),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
                         Positioned(
                           left: 93.61,
                           top: 23,
                           child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => RegisterPage()),
-                            );
-                          },
-                          child: Text(
-                            'Daftar Akun',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
-                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterPage()),
+                              );
+                            },
+                            child: Text(
+                              'Daftar Akun',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
                             ),
                           ),
                         ),
@@ -97,51 +97,53 @@ class StartupPage extends StatelessWidget {
                     child: Stack(
                       children: [
                         Positioned(
-                        left: 0,
-                        top: 0,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginPage()),
-                            );
-                          },
-                          child: Container(
-                            width: 280,
-                            height: 67,
-                            decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                  width: 1, 
-                                  color: Color(0xFF468F2B),
+                          left: 0,
+                          top: 0,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                              );
+                            },
+                            child: Container(
+                              width: 280,
+                              height: 67,
+                              decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                    width: 1,
+                                    color: Color(0xFF468F2B),
+                                  ),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                borderRadius: BorderRadius.circular(12),
                               ),
                             ),
                           ),
                         ),
-                      ),
                         Positioned(
                           left: 116.82,
                           top: 24,
                           child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginPage()),
-                            );
-                          },
-                          child: Text(
-                            'Login',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color(0xFF468F2B),
-                              fontSize: 16,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w900,
-                              height: 0,
-                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                              );
+                            },
+                            child: Text(
+                              'Login',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFF468F2B),
+                                fontSize: 16,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w900,
+                                height: 0,
+                              ),
                             ),
                           ),
                         ),

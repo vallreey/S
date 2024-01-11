@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:SiBangKu/HomePage.dart'; 
+import 'package:SiKarung/FirstPage.dart'; 
 
 void main() {
   runApp(MaterialApp(
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
-  }
+  } 
 }
 

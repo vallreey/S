@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:SiKarung/LoginPage.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
@@ -144,30 +145,63 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 83,
-                  top: 419,
-                  child: Text(
-                    'Email...',
-                    style: TextStyle(
-                      color: Color(0xFFCACACA),
-                      fontSize: 16,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                      height: 0,
+                  left: 55,
+                  top: 395,
+                  child: Container(
+                    width: 280,
+                    height: 67,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.fromLTRB(15.0, 23.0, 15.0, 15.0),
+                        hintText: 'Email...',
+                        hintStyle: TextStyle(
+                          color: Color(0xFFCACACA),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),
                 Positioned(
-                  left: 83,
-                  top: 522,
-                  child: Text(
-                    'Password...',
-                    style: TextStyle(
-                      color: Color(0xFFCACACA),
-                      fontSize: 16,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                      height: 0,
+                  left: 55,
+                  top: 500,
+                  child: Container(
+                    width: 280,
+                    height: 67,
+                    child: TextField(
+                      obscureText: true, // Menyembunyikan teks seperti password
+                      decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.fromLTRB(15.0, 23.0, 15.0, 15.0),
+                        hintText: 'Password...',
+                        hintStyle: TextStyle(
+                          color: Color(0xFFCACACA),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),
@@ -234,11 +268,14 @@ class RegisterPage extends StatelessWidget {
                 Positioned(
                   left: 109,
                   top: 703,
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Sudah punya akun? ',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                        },
+                        child: Text(
+                          'Sudah punya akun? ',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
@@ -247,8 +284,18 @@ class RegisterPage extends StatelessWidget {
                             height: 0,
                           ),
                         ),
-                        TextSpan(
-                          text: 'Login ',
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Navigasi ke halaman LoginPage
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text(
+                          'Login ',
                           style: TextStyle(
                             color: Color(0xFF468F2B),
                             fontSize: 14,
@@ -257,9 +304,8 @@ class RegisterPage extends StatelessWidget {
                             height: 0,
                           ),
                         ),
-                      ],
-                    ),
-                    textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ],

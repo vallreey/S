@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:SiKarung/RegisterPage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -28,21 +29,6 @@ class LoginPage extends StatelessWidget {
                       width: 120,
                       height: 120,
                       fit: BoxFit.contain,
-                    ),
-                  ),
-                  Positioned(
-                    left: 55,
-                    top: 496,
-                    child: Container(
-                      width: 280,
-                      height: 67,
-                      decoration: ShapeDecoration(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFFAAAAAA)),
-                          borderRadius: BorderRadius.circular(9),
-                        ),
-                      ),
                     ),
                   ),
                   Positioned(
@@ -128,16 +114,41 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 83,
-                    top: 520,
-                    child: Text(
-                      'Password...',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontSize: 16,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
+                    left: 55,
+                    top: 500,
+                    child: Container(
+                      width: 280,
+                      height: 67,
+                      decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(width: 1, color: Color(0xFFAAAAAA)),
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                      ),
+                      child: TextField(
+                        obscureText:
+                            true, // Menyembunyikan teks seperti password
+                        decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.fromLTRB(15.0, 23.0, 15.0, 15.0),
+                          hintText: 'Password...',
+                          hintStyle: TextStyle(
+                            color: Color(0xFFCACACA),
+                            fontSize: 16,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                            height: 0,
+                          ),
+                          border: InputBorder.none,
+                        ),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
                       ),
                     ),
                   ),
@@ -217,14 +228,26 @@ class LoginPage extends StatelessWidget {
                               height: 0,
                             ),
                           ),
-                          TextSpan(
-                            text: 'Daftar di sini!',
-                            style: TextStyle(
-                              color: Color(0xFF468F2B),
-                              fontSize: 14,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w700,
-                              height: 0,
+                          WidgetSpan(
+                            child: GestureDetector(
+                              onTap: () {
+                                // Navigasi ke halaman pendaftaran (gantilah RegisterPage dengan nama halaman pendaftaran yang sesuai)
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RegisterPage()),
+                                );
+                              },
+                              child: Text(
+                                'Daftar di sini!',
+                                style: TextStyle(
+                                  color: Color(0xFF468F2B),
+                                  fontSize: 14,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w700,
+                                  height: 0,
+                                ),
+                              ),
                             ),
                           ),
                         ],
