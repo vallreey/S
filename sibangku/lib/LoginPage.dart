@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:SiKarung/RegisterPage.dart';
+import 'package:SiKarung/Home.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -174,41 +175,51 @@ class LoginPage extends StatelessWidget {
                   Positioned(
                     left: 55,
                     top: 622,
-                    child: Container(
-                      width: 280,
-                      height: 67,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Container(
-                              width: 280,
-                              height: 67,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF468F2B),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  HomePage()), // Replace HomeScreen with the actual class for your Home.dart
+                        );
+                      },
+                      child: Container(
+                        width: 280,
+                        height: 67,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: Container(
+                                width: 280,
+                                height: 67,
+                                decoration: ShapeDecoration(
+                                  color: Color(0xFF468F2B),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Positioned(
-                            left: 118.61,
-                            top: 23,
-                            child: Text(
-                              'Login',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w600,
-                                height: 0,
+                            Positioned(
+                              left: 118.61,
+                              top: 23,
+                              child: Text(
+                                'Login',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
