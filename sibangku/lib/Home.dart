@@ -5,7 +5,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 155),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 95),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                     transform: Matrix4.translationValues(0, -8, 0),
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage("images/wa.jpg"),
+                        image: AssetImage('images/TOS.gif'),
                         fit: BoxFit.fill,
                       ),
                       shape: CircleBorder(
@@ -158,7 +158,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10), // Jarak antara Container dan Stack
             Container(
-              transform: Matrix4.translationValues(25, 130, 0),
+              transform: Matrix4.translationValues(18, 130, 0),
               width: 301,
               height: 13,
               child: Stack(
@@ -313,8 +313,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 270,
-                    top: 7,
+                    left: 260,
+                    top: 5,
                     child: Text(
                       'Lihat Semua',
                       textAlign: TextAlign.right,
@@ -331,7 +331,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              transform: Matrix4.translationValues(0, 210, 0),
+              transform: Matrix4.translationValues(0, 180, 0),
               width: 324,
               height: 70,
               child: Stack(
@@ -429,6 +429,272 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('images/wa.jpg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 280,
+                    top: 19,
+                    child: Container(
+                      width: 25,
+                      height: 25,
+                      decoration: ShapeDecoration(
+                        color: Color(0xFFD9D9D9),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 289,
+                    top: 24,
+                    child: Text(
+                      '>',
+                      style: TextStyle(
+                        color: Color(0xFF3A841E),
+                        fontSize: 11,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              transform: Matrix4.translationValues(0, 194, 0),
+              width: 324,
+              height: 70,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: 324,
+                      height: 70,
+                      decoration: ShapeDecoration(
+                        color: Color(0xffededed),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 20,
+                            offset: Offset(0, 5),
+                            spreadRadius: 0,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 68,
+                    top: 8,
+                    child: Transform(
+                      transform: Matrix4.identity()
+                        ..translate(0.0, 0.0)
+                        ..rotateZ(1.57),
+                      child: Container(
+                        width: 48,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                              color: Color(0xFFD7D7D7),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 11,
+                    child: Text(
+                      'Bronya riding',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 26,
+                    child: Text(
+                      'Rp241.000',
+                      style: TextStyle(
+                        color: Color(0xFF468F2B),
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 41,
+                    child: Text(
+                      '94x Terjual',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    top: 14,
+                    child: Container(
+                      width: 30,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/onya.jpg'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 280,
+                    top: 19,
+                    child: Container(
+                      width: 25,
+                      height: 25,
+                      decoration: ShapeDecoration(
+                        color: Color(0xFFD9D9D9),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 289,
+                    top: 24,
+                    child: Text(
+                      '>',
+                      style: TextStyle(
+                        color: Color(0xFF3A841E),
+                        fontSize: 11,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              transform: Matrix4.translationValues(0, 208, 0),
+              width: 324,
+              height: 70,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: 324,
+                      height: 70,
+                      decoration: ShapeDecoration(
+                        color: Color(0xffededed),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 20,
+                            offset: Offset(0, 5),
+                            spreadRadius: 0,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 68,
+                    top: 8,
+                    child: Transform(
+                      transform: Matrix4.identity()
+                        ..translate(0.0, 0.0)
+                        ..rotateZ(1.57),
+                      child: Container(
+                        width: 48,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                              color: Color(0xFFD7D7D7),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 11,
+                    child: Text(
+                      'Gorengan Rek 😂',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 26,
+                    child: Text(
+                      'Rp2.000',
+                      style: TextStyle(
+                        color: Color(0xFF468F2B),
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 41,
+                    child: Text(
+                      '89x Terjual',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    top: 14,
+                    child: Container(
+                      width: 30,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/Gorengan.jpg'),
                           fit: BoxFit.fill,
                         ),
                       ),
