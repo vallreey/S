@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:SiKarung/checkout-detail.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
@@ -45,7 +47,7 @@ class HomePage extends StatelessWidget {
                     transform: Matrix4.translationValues(0, -8, 0),
                     decoration: ShapeDecoration(
                       image: DecorationImage(
-                        image: AssetImage('images/TOS.gif'),
+                        image: AssetImage('images/pp.png'),
                         fit: BoxFit.fill,
                       ),
                       shape: CircleBorder(
@@ -59,6 +61,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 3), // Jarak antara teks dan Container
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   margin: EdgeInsets.only(
@@ -294,13 +297,11 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               transform: Matrix4.translationValues(0, 160, 0),
-              width: 500,
-              height: 19,
-              child: Stack(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Positioned(
-                    left: 8,
-                    top: 0,
+                  Expanded(
                     child: Text(
                       'Produk Terlaris',
                       style: TextStyle(
@@ -312,24 +313,20 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    left: 260,
-                    top: 5,
-                    child: Text(
-                      'Lihat Semua',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        color: Color(0xFF235312),
-                        fontSize: 10,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        height: 0,
-                      ),
+                  Text(
+                    'Lihat Semua',
+                    style: TextStyle(
+                      color: Color(0xFF235312),
+                      fontSize: 10,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      height: 0,
                     ),
                   ),
                 ],
               ),
             ),
+
             Container(
               transform: Matrix4.translationValues(0, 180, 0),
               width: 324,
@@ -382,7 +379,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 11,
                     child: Text(
-                      'Loli Dragon (Ukuran Sachet)',
+                      'Lay’s BBQ (Medium)',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 10,
@@ -396,7 +393,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 26,
                     child: Text(
-                      'Rp1.241.000',
+                      'Rp14.000',
                       style: TextStyle(
                         color: Color(0xFF468F2B),
                         fontSize: 10,
@@ -428,7 +425,7 @@ class HomePage extends StatelessWidget {
                       height: 42,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('images/wa.jpg'),
+                          image: AssetImage('images/wa.png'),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -437,26 +434,26 @@ class HomePage extends StatelessWidget {
                   Positioned(
                     left: 280,
                     top: 19,
-                    child: Container(
-                      width: 25,
-                      height: 25,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFD9D9D9),
-                        shape: OvalBorder(),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 289,
-                    top: 24,
-                    child: Text(
-                      '>',
-                      style: TextStyle(
-                        color: Color(0xFF3A841E),
-                        fontSize: 11,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
-                        height: 0,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckoutPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFD9D9D9),
+                          shape: CircleBorder(),
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xFF3A841E),
+                          size: 18,
+                        ),
                       ),
                     ),
                   ),
@@ -515,7 +512,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 11,
                     child: Text(
-                      'Bronya riding',
+                      'Lay’s Classic Classique (Large)',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 10,
@@ -529,7 +526,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 26,
                     child: Text(
-                      'Rp241.000',
+                      'Rp20.000',
                       style: TextStyle(
                         color: Color(0xFF468F2B),
                         fontSize: 10,
@@ -648,7 +645,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 11,
                     child: Text(
-                      'Gorengan Rek 😂',
+                      'Sunrise Tofu',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 10,
@@ -662,7 +659,7 @@ class HomePage extends StatelessWidget {
                     left: 82,
                     top: 26,
                     child: Text(
-                      'Rp2.000',
+                      'Rp11.000',
                       style: TextStyle(
                         color: Color(0xFF468F2B),
                         fontSize: 10,

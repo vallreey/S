@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:SiKarung/LoginPage.dart';
 import 'package:SiKarung/RegisterPage.dart';
 
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
 class StartupPage extends StatelessWidget {
   @override

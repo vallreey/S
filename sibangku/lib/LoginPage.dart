@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:SiKarung/RegisterPage.dart';
-import 'package:SiKarung/Home.dart';
+import 'package:SiKarung/navbar-bot.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -181,7 +181,7 @@ class LoginPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  HomePage()), // Replace HomeScreen with the actual class for your Home.dart
+                                  NavbarBot()), // Replace HomeScreen with the actual class for your Home.dart
                         );
                       },
                       child: Container(
