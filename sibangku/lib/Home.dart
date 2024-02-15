@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:SiKarung/checkout-detail.dart';
+import 'package:SiKarung/menuproduk.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -65,7 +66,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.only(
-                      top: 80), // Menambahkan margin top dan menggeser ke kiri
+                      top: 20), // Menambahkan margin top dan menggeser ke kiri
                   width: 156,
                   height: 48,
                   padding: EdgeInsets.only(left: 10), // Menggeser teks ke kiri
@@ -112,7 +113,7 @@ class HomePage extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                      top: 80), // Menambahkan margin top dan menggeser ke kanan
+                      top: 20), // Menambahkan margin top dan menggeser ke kanan
                   width: 156,
                   height: 48,
                   padding: EdgeInsets.only(left: 10), // Menggeser teks ke kiri
@@ -161,142 +162,28 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10), // Jarak antara Container dan Stack
             Container(
-              transform: Matrix4.translationValues(18, 130, 0),
-              width: 301,
-              height: 13,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: SizedBox(
-                      width: 27,
-                      height: 13,
-                      child: Text(
-                        'Senin',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
+              margin: EdgeInsets.only(top: 20, left: 3),
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  double imageWidth = constraints.maxWidth *
+                      1; // Sesuaikan dengan faktor yang diinginkan
+                  double imageHeight = imageWidth *
+                      (110 / 280); // Sesuaikan dengan aspek ratio gambar
+                  return Container(
+                    width: imageWidth,
+                    height: imageHeight,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('images/grafik.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                  ),
-                  Positioned(
-                    left: 42,
-                    top: 0,
-                    child: SizedBox(
-                      width: 31,
-                      height: 13,
-                      child: Text(
-                        'Selasa',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 86,
-                    top: 0,
-                    child: SizedBox(
-                      width: 26,
-                      height: 13,
-                      child: Text(
-                        'Rabu',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 125,
-                    top: 0,
-                    child: SizedBox(
-                      width: 30,
-                      height: 13,
-                      child: Text(
-                        'Kamis',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 172,
-                    top: 0,
-                    child: SizedBox(
-                      width: 30,
-                      height: 13,
-                      child: Text(
-                        'Jumat',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 217,
-                    top: 0,
-                    child: SizedBox(
-                      width: 30,
-                      height: 13,
-                      child: Text(
-                        'Sabtu',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 260,
-                    top: 0,
-                    child: SizedBox(
-                      width: 41,
-                      height: 13,
-                      child: Text(
-                        'Minggu',
-                        style: TextStyle(
-                          color: Color(0xFF8B8B8B),
-                          fontSize: 9,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                  );
+                },
               ),
             ),
             Container(
-              transform: Matrix4.translationValues(0, 160, 0),
+              transform: Matrix4.translationValues(-3, 30, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -313,14 +200,22 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
-                    'Lihat Semua',
-                    style: TextStyle(
-                      color: Color(0xFF235312),
-                      fontSize: 10,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w600,
-                      height: 0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => menuproduk()),
+                      );
+                    },
+                    child: Text(
+                      'Lihat Semua',
+                      style: TextStyle(
+                        color: Color(0xFF235312),
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ],
@@ -328,7 +223,7 @@ class HomePage extends StatelessWidget {
             ),
 
             Container(
-              transform: Matrix4.translationValues(0, 180, 0),
+              transform: Matrix4.translationValues(0, 60, 0),
               width: 324,
               height: 70,
               child: Stack(
@@ -461,7 +356,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              transform: Matrix4.translationValues(0, 194, 0),
+              transform: Matrix4.translationValues(0, 77, 0),
               width: 324,
               height: 70,
               child: Stack(
@@ -476,14 +371,6 @@ class HomePage extends StatelessWidget {
                         color: Color(0xffededed),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8)),
-                        shadows: [
-                          BoxShadow(
-                            color: Color(0x3F000000),
-                            blurRadius: 20,
-                            offset: Offset(0, 5),
-                            spreadRadius: 0,
-                          )
-                        ],
                       ),
                     ),
                   ),
@@ -567,26 +454,26 @@ class HomePage extends StatelessWidget {
                   Positioned(
                     left: 280,
                     top: 19,
-                    child: Container(
-                      width: 25,
-                      height: 25,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFFD9D9D9),
-                        shape: OvalBorder(),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 289,
-                    top: 24,
-                    child: Text(
-                      '>',
-                      style: TextStyle(
-                        color: Color(0xFF3A841E),
-                        fontSize: 11,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
-                        height: 0,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckoutPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFD9D9D9),
+                          shape: CircleBorder(),
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xFF3A841E),
+                          size: 18,
+                        ),
                       ),
                     ),
                   ),
@@ -594,7 +481,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              transform: Matrix4.translationValues(0, 208, 0),
+              transform: Matrix4.translationValues(0, 90, 0),
               width: 324,
               height: 70,
               child: Stack(
@@ -609,14 +496,6 @@ class HomePage extends StatelessWidget {
                         color: Color(0xffededed),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8)),
-                        shadows: [
-                          BoxShadow(
-                            color: Color(0x3F000000),
-                            blurRadius: 20,
-                            offset: Offset(0, 5),
-                            spreadRadius: 0,
-                          )
-                        ],
                       ),
                     ),
                   ),
@@ -700,26 +579,151 @@ class HomePage extends StatelessWidget {
                   Positioned(
                     left: 280,
                     top: 19,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckoutPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFD9D9D9),
+                          shape: CircleBorder(),
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xFF3A841E),
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              transform: Matrix4.translationValues(0, 107, 0),
+              width: 324,
+              height: 70,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
                     child: Container(
-                      width: 25,
-                      height: 25,
+                      width: 324,
+                      height: 70,
                       decoration: ShapeDecoration(
-                        color: Color(0xFFD9D9D9),
-                        shape: OvalBorder(),
+                        color: Color(0xffededed),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
                       ),
                     ),
                   ),
                   Positioned(
-                    left: 289,
-                    top: 24,
+                    left: 68,
+                    top: 8,
+                    child: Transform(
+                      transform: Matrix4.identity()
+                        ..translate(0.0, 0.0)
+                        ..rotateZ(1.57),
+                      child: Container(
+                        width: 48,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              width: 1,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                              color: Color(0xFFD7D7D7),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 11,
                     child: Text(
-                      '>',
+                      'Tomat Segar (1 gram)',
                       style: TextStyle(
-                        color: Color(0xFF3A841E),
-                        fontSize: 11,
+                        color: Colors.black,
+                        fontSize: 10,
                         fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                         height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 26,
+                    child: Text(
+                      'Rp2.000',
+                      style: TextStyle(
+                        color: Color(0xFF468F2B),
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 82,
+                    top: 41,
+                    child: Text(
+                      '10x Terjual',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 20,
+                    top: 14,
+                    child: Container(
+                      width: 30,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/tomat.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 280,
+                    top: 19,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CheckoutPage()),
+                        );
+                      },
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFFD9D9D9),
+                          shape: CircleBorder(),
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xFF3A841E),
+                          size: 18,
+                        ),
                       ),
                     ),
                   ),

@@ -81,6 +81,17 @@ flutter:
     - images/pp.png
     - images/filter.png
 
+    - images/editproduk.png
+    - images/buang.png
+    - images/beli.png
+    - images/tomat.png
+    - images/minyak.png
+    - images/detol.png
+    - images/Vector.png
+    - images/grafik.png
+
+
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

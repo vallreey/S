@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:SiKarung/home.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -39,10 +38,7 @@ class _AddProductState extends State<AddProduct> {
                     IconButton(
                       icon: Icon(Icons.arrow_back),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
+                        Navigator.pop(context);
                       },
                     ),
                     SizedBox(width: 20),
@@ -60,7 +56,6 @@ class _AddProductState extends State<AddProduct> {
               SizedBox(
                   height:
                       20), // Jarak antara "Tambahkan Produk" dan input pertama
-
               // Nama Produk
               Padding(
                 padding: const EdgeInsets.fromLTRB(46, 0, 16, 0),
@@ -94,7 +89,6 @@ class _AddProductState extends State<AddProduct> {
               ),
               SizedBox(
                   height: 10), // Jarak antara input pertama dan input kedua
-
               // Harga Modal
               Padding(
                 padding: const EdgeInsets.fromLTRB(46, 0, 16, 0),
@@ -128,7 +122,6 @@ class _AddProductState extends State<AddProduct> {
                 ),
               ),
               SizedBox(height: 10), // Jarak antara input kedua dan input ketiga
-
               // Laba
               Padding(
                 padding: const EdgeInsets.fromLTRB(46, 0, 16, 0),
@@ -163,7 +156,7 @@ class _AddProductState extends State<AddProduct> {
               ),
               SizedBox(
                   height: 10), // Jarak antara input ketiga dan input gambar
-
+              // Image Input
               // Image Input
               Padding(
                 padding: const EdgeInsets.fromLTRB(46, 0, 16, 0),
@@ -178,7 +171,7 @@ class _AddProductState extends State<AddProduct> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    Stack(
+                    Row(
                       children: [
                         Container(
                           width: 195,
@@ -204,29 +197,28 @@ class _AddProductState extends State<AddProduct> {
                                   ),
                                 ),
                         ),
-                        Positioned(
-                          top: 30,
-                          right: 77,
-                          child: InkWell(
-                            onTap: _pickImage,
-                            onHover: (isHovered) {
-                              setState(() {
-                                _isHovered = isHovered;
-                              });
-                            },
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: _isHovered
-                                    ? Colors.green.shade800
-                                    : Colors.green,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
+                        SizedBox(
+                            width:
+                                16), // Jarak antara gambar dan tombol "Tambah Gambar"
+                        InkWell(
+                          onTap: _pickImage,
+                          onHover: (isHovered) {
+                            setState(() {
+                              _isHovered = isHovered;
+                            });
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: _isHovered
+                                  ? Colors.green.shade800
+                                  : Colors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -235,24 +227,23 @@ class _AddProductState extends State<AddProduct> {
                   ],
                 ),
               ),
+
               SizedBox(
                   height:
                       15), // Jarak antara input gambar dan tombol "Batalkan"
-
               // Tombol Batalkan dan Simpan
               SizedBox(
                   height:
                       25), // Jarak antara input gambar dan tombol "Batalkan"
-
               // Tombol Batalkan dan Simpan
               Padding(
-                padding :EdgeInsets.fromLTRB(30, 0, 0, 0),
+                padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        // Logika untuk tombol "Batalkan"
+                        Navigator.pop(context); // Kembali ke halaman sebelumnya
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.red,
@@ -266,7 +257,6 @@ class _AddProductState extends State<AddProduct> {
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
-
                     SizedBox(
                         width:
                             15), // Jarak antara tombol "Batalkan" dan "Simpan"

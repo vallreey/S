@@ -144,7 +144,7 @@ class ProfilePage extends StatelessWidget {
                       left: 15,
                       top: 21,
                       child: Text(
-                        '4',
+                        '6',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 14,
@@ -171,7 +171,6 @@ class ProfilePage extends StatelessWidget {
                   ],
                 ),
               ),
-              
             ],
           ),
         ),
