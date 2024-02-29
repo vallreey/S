@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class AddProduct extends StatefulWidget {
+class EditProduk extends StatefulWidget {
   @override
-  _AddProductState createState() => _AddProductState();
+  _EditProdukState createState() => _EditProdukState();
 }
 
-class _AddProductState extends State<AddProduct> {
+class _EditProdukState extends State<EditProduk> {
   File? _imageFile;
   bool _isHovered = false;
 
@@ -43,7 +43,7 @@ class _AddProductState extends State<AddProduct> {
                     ),
                     SizedBox(width: 20),
                     Text(
-                      'Tambahkan Produk',
+                      'Edit Produk',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.0,
@@ -75,6 +75,7 @@ class _AddProductState extends State<AddProduct> {
                       height: 67,
                       child: TextField(
                         decoration: InputDecoration(
+                          hintText: 'Lay\'s BBQ (Medium)',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.green),
@@ -109,6 +110,7 @@ class _AddProductState extends State<AddProduct> {
                       child: TextField(
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
+                          hintText: 'Rp12.000',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.green),
@@ -142,6 +144,7 @@ class _AddProductState extends State<AddProduct> {
                       child: TextField(
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
+                          hintText: 'Rp14.000',
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.green),
@@ -188,15 +191,13 @@ class _AddProductState extends State<AddProduct> {
                                   fit: BoxFit.cover,
                                 )
                               : Center(
-                                  child: Text(
-                                    'Masukkan Gambar',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.grey,
-                                    ),
+                                  child: Image.asset(
+                                    'images/wa.png',
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                         ),
+
                         SizedBox(
                             width:
                                 16), // Jarak antara gambar dan tombol "Tambah Gambar"

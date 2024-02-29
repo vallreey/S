@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:SiKarung/addproduct.dart';
+import 'package:SiKarung/editproduk.dart';
+import 'package:SiKarung/checkout-detail.dart';
 
 class menuproduk extends StatefulWidget {
   @override
@@ -15,7 +17,11 @@ class _menuprodukState extends State<menuproduk> {
       'name': 'Lay\'s BBQ (Medium)',
       'price': 'Rp 14.000'
     },
-    {'image': 'images/onya.jpg', 'name': 'Lay’s Classic Classique (Large)', 'price': 'Rp 20.000'},
+    {
+      'image': 'images/onya.jpg',
+      'name': 'Lay’s Classic Classique (Large)',
+      'price': 'Rp 20.000'
+    },
     {
       'image': 'images/Gorengan.jpg',
       'name': 'Sunrise Tofu',
@@ -267,36 +273,55 @@ class _menuprodukState extends State<menuproduk> {
                                 Spacer(),
                                 Row(
                                   children: [
-                                    Container(
-                                      margin: EdgeInsets.only(top: 20),
-                                      width: 25,
-                                      height: 25,
-                                      decoration: ShapeDecoration(
-                                        color: Color(0xFF468F2B),
-                                        shape: CircleBorder(),
-                                      ),
-                                      child: Center(
-                                        child: Image.asset(
-                                          'images/beli.png',
-                                          width: 14,
-                                          height: 14,
-                                        ),
-                                      ),
-                                    ),
+                                    InkWell(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => CheckoutPage()),
+    );
+  },
+  child: Container(
+    margin: EdgeInsets.only(top: 20),
+    width: 25,
+    height: 25,
+    decoration: ShapeDecoration(
+      color: Color(0xFF468F2B),
+      shape: CircleBorder(),
+    ),
+    child: Center(
+      child: Image.asset(
+        'images/beli.png',
+        width: 14,
+        height: 14,
+      ),
+    ),
+  ),
+),
+
                                     SizedBox(width: 5),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 20),
-                                      width: 25,
-                                      height: 25,
-                                      decoration: ShapeDecoration(
-                                        color: Color(0xFFECB34D),
-                                        shape: CircleBorder(),
-                                      ),
-                                      child: Center(
-                                        child: Image.asset(
-                                          'images/editproduk.png',
-                                          width: 14,
-                                          height: 14,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  EditProduk()),
+                                        );
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(top: 20),
+                                        width: 25,
+                                        height: 25,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFECB34D),
+                                          shape: CircleBorder(),
+                                        ),
+                                        child: Center(
+                                          child: Image.asset(
+                                            'images/editproduk.png',
+                                            width: 14,
+                                            height: 14,
+                                          ),
                                         ),
                                       ),
                                     ),

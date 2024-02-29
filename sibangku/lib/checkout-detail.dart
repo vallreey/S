@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:SiKarung/navbar-bot.dart';
+import 'package:SiKarung/checkout-2.dart';
 
 class CheckoutPage extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
-  int itemCount = 0;
+  int itemCount = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +167,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       top: 460,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Aksi ketika tombol "Lanjut Pilih Barang" ditekan
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NavbarBot()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
@@ -196,7 +201,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       top: 550,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Aksi ketika tombol "Checkout" ditekan
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Checkout2()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green,

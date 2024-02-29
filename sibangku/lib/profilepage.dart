@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:SiKarung/LoginPage.dart';
+import 'package:SiKarung/editprofile.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -6,7 +8,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Transform.translate(
-          offset: Offset(0, -150),
+          offset: Offset(0, -70),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -21,7 +23,7 @@ class ProfilePage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: 40), // Jarak 10px antara teks dan gambar
+              SizedBox(height: 20), // Jarak 10px antara teks dan gambar
               Container(
                 width: 91,
                 height: 91,
@@ -49,7 +51,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40), // Jarak 10px antara gambar dan teks
+              SizedBox(height: 35), // Jarak 10px antara gambar dan teks
               Text(
                 'Muhammad Kenzo',
                 textAlign: TextAlign.center,
@@ -169,6 +171,122 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 50, left: 40),
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => EditProfil()),
+                      );
+                    },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'images/edit.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                      SizedBox(width: 15),
+                      Text(
+                        'Edit Profil',
+                        style: TextStyle(
+                          color: Color(0xF2235211),
+                          fontSize: 15,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 20,
+                ),
+                width: 390,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 1,
+                      strokeAlign: BorderSide.strokeAlignCenter,
+                      color: Color(0xFFE2E2E2),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 40),
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text("Konfirmasi"),
+                          content: Text("Apakah anda yakin akan Log Out dari akun?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(false); // Tidak
+                              },
+                              child: Text("Tidak"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(true); // Ya
+                              },
+                              child: Text("Ya"),
+                            ),
+                          ],
+                        );
+                      },
+                    ).then((value) {
+                      if (value == true) {
+                        // Jika pengguna memilih Ya, arahkan ke halaman LoginPage.dart
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                      }
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'images/Log_Out.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                      SizedBox(width: 15),
+                      Text(
+                        'Keluar',
+                        style: TextStyle(
+                          color: Color(0x9BF31313),
+                          fontSize: 15,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 20,
+                ),
+                width: 390,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 1,
+                      strokeAlign: BorderSide.strokeAlignCenter,
+                      color: Color(0xFFE2E2E2),
+                    ),
+                  ),
                 ),
               ),
             ],
